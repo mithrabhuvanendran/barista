@@ -95,16 +95,16 @@ body {
   justify-content: center;
   gap: 20px;
   position: relative;
-  z-index: 1;
 }
 
-.home .box {
+.home .home-details .box {
   position: absolute;
   width: 200px;
   height: 350px;
   background-color: rgba(216, 110, 110, 0.4);
   transform: rotate(220deg);
   border-radius: 20px;
+  z-index: -1;
 }
 
 .home .home-details p {
