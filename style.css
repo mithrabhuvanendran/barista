@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  height: 100vh;
+  background-image: url(images/coffee-shop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.top-header {
+  padding: 30px 30px 0 30px;
+}
+
+.top-header header {
+  border: solid 1px black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  /* margin: 30px; */
+  box-shadow: 0 0 16px black;
+  background-color: rgba(52, 51, 51, 0.4);
+  position: relative;
+}
+
+.top-header header a {
+  text-decoration: none;
+  color: white;
+}
+
+.top-header header .head-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  padding: 10px 30px;
+}
+
+.top-header header .head-logo i {
+  font-size: 25px;
+}
+
+.top-header header .head-logo i:hover {
+  color: rgb(243, 121, 22);
+}
+
+.top-header header .head-logo h1 a:hover {
+  color: rgb(243, 121, 22);
+}
+
+.top-header header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.top-header header nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+.top-header header nav ul li a {
+  font-size: 18px;
+}
+
+.top-header header nav ul li a:hover {
+  color: rgb(243, 121, 22);
+}
+
+#click {
+  display: none;
+}
+
+#menuBar {
+  display: none;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 200px 0;
+}
+
+.home .home-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.home .box {
+  position: absolute;
+  width: 200px;
+  height: 350px;
+  background-color: rgba(216, 110, 110, 0.4);
+  transform: rotate(220deg);
+  border-radius: 20px;
+}
+
+.home .home-details p {
+  color: white;
+}
+
+.home .home-details p:first-child {
+  font-size: 1.5em;
+}
+
+.home .home-details p:nth-child(2) {
+  font-size: 5rem;
+}
+
+.home .home-details p:nth-child(3) {
+  font-size: 1.7em;
+}
+
+.home .home-details .buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .home-details .buttons button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+}
+
+.home .home-details .buttons button:hover {
+  background-color: rgb(243, 121, 22);
+}
+
+@media (max-width: 992px) {
+  .top-header header nav {
+    position: absolute;
+    top: 100%;
+    left: -20%;
+    transition: all 1s ease;
+  }
+
+  .top-header header nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #menuBar {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  #click:checked + label + nav {
+    left: 1%;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-header header nav {
+    left: -40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .top-header header nav {
+    left: -50%;
+  }
+
+  .top-header header nav ul {
+    gap: 10px;
+  }
+
+  .home .home-details p:first-child {
+    font-size: 1.3em;
+  }
+  .home .home-details p:nth-child(2) {
+    font-size: 4rem;
+  }
+
+  .home .home-details p:nth-child(3) {
+    font-size: 1.5em;
+  }
+}
