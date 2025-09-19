@@ -11,6 +11,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .top-header {
@@ -83,9 +85,9 @@ body {
 
 .home {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 200px 0;
 }
 
 .home .home-details {
