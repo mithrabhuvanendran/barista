@@ -5,73 +5,72 @@
   list-style-type: none;
 }
 
-body {
-  height: 100vh;
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main {
+  /* height: 100vh; */
+  width: 100%;
   background-image: url(images/coffee-shop.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.top-header {
-  padding: 30px 30px 0 30px;
-}
-
-.top-header header {
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  box-shadow: 0 0 16px black;
-  background-color: rgba(52, 51, 51, 0.4);
+  padding-top: 30px;
   position: relative;
 }
 
-.top-header header a {
+main header {
+  width: 100%;
+  /* margin: 0 20px; */
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  box-shadow: 0 0 16px black;
+  background-color: rgba(52, 51, 51, 0.4);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 2%;
+  z-index: 2;
+}
+
+main header a {
   text-decoration: none;
   color: white;
 }
-
-.top-header header .head-logo {
+main header .head-logo {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   color: white;
-  padding: 10px 30px;
 }
-
-.top-header header .head-logo i {
+main header .head-logo i {
   font-size: 25px;
 }
-
-.top-header header .head-logo i:hover {
+main header .head-logo i:hover {
   color: rgb(243, 121, 22);
 }
-
-.top-header header .head-logo h1 a:hover {
+header .head-logo h1 a:hover {
   color: rgb(243, 121, 22);
 }
-
-.top-header header nav {
+main header nav {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
-
-.top-header header nav ul {
+main header nav ul {
   display: flex;
   gap: 30px;
 }
-
-.top-header header nav ul li a {
+main header nav ul li a {
   font-size: 18px;
 }
-
-.top-header header nav ul li a:hover {
+main header nav ul li a:hover {
   color: rgb(243, 121, 22);
 }
 
@@ -83,23 +82,23 @@ body {
   display: none;
 }
 
-.home {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
+main .home {
+  display: grid;
+  place-items: center;
+  height: 97vh;
 }
 
-.home .home-details {
+main .home .home-details {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
   position: relative;
+  z-index: 1;
 }
 
-.home .home-details .box {
+main .home .home-details .box {
   position: absolute;
   width: 200px;
   height: 350px;
@@ -109,7 +108,7 @@ body {
   z-index: -1;
 }
 
-.home .home-details p {
+main .home .home-details p {
   color: white;
 }
 
@@ -145,15 +144,540 @@ body {
   background-color: rgb(243, 121, 22);
 }
 
+.history {
+  /* border: solid; */
+  display: grid;
+  place-items: center;
+  padding: 100px 130px;
+  background-color: rgb(128, 72, 46);
+}
+
+.history figure {
+  display: flex;
+  height: 80vh;
+  gap: 90px;
+  /* border: solid; */
+}
+
+.history figure .img-container {
+  width: 80%;
+  position: relative;
+}
+
+.history figure .img-container img {
+  border-radius: 20px;
+}
+
+.history figure .img-container div {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  color: white;
+  font-size: 40px;
+}
+
+.history figure figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 70%;
+  color: white;
+}
+
+.history figure figcaption p {
+  font-size: 18px;
+}
+
+.history figure figcaption button {
+  padding: 15px;
+  border-radius: 30px;
+  border: solid 2px white;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  width: 30%;
+}
+
+.people {
+  /* border: solid; */
+  display: grid;
+  place-items: center;
+  padding: 100px;
+  background-color: rgb(190, 154, 110);
+}
+
+.people-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.people-details .people-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.people-details .people-title h1 {
+  font-size: 3rem;
+}
+
+.people-details figure {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.people-details figure div {
+  height: 50vh;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.people-details figure div img {
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.people-details figure div img:hover {
+  transform: scale(1.1);
+}
+
+.people-details figure div figcaption {
+  position: absolute;
+  inset-inline: 0;
+  inset-block: 60%;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+.people-details figure div figcaption p {
+  font-size: 18px;
+}
+
+.menu {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url(images/coffee-shop.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.menu-details {
+  display: flex;
+  gap: 30px;
+  color: white;
+  width: 90%;
+}
+
+.delicious,
+.favorite {
+  /* border: solid; */
+  width: 100%;
+  border-radius: 20px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: rgba(16, 16, 16, 0.7);
+}
+
+.delicious-title,
+.favorite-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu .details div:nth-of-type(1),
+.menu .details div:nth-of-type(3),
+.menu .details div:nth-of-type(5),
+.menu .details div:nth-of-type(7),
+.menu .details div:nth-of-type(9) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.menu .details div:nth-of-type(2),
+.menu .details div:nth-of-type(4),
+.menu .details div:nth-of-type(6),
+.menu .details div:nth-of-type(8),
+.menu .details div:nth-of-type(10) {
+  color: gray;
+}
+
+.delicious .details div:nth-of-type(5) h2 button,
+.favorite .details div:nth-of-type(3) h2 button {
+  position: relative;
+}
+
+.delicious .details div:nth-of-type(5) h2 button .icon i,
+.favorite .details div:nth-of-type(3) h2 button .icon i {
+  position: absolute;
+  top: 18%;
+  left: 0;
+  color: orange;
+  transform: rotate(180deg) translate(10px);
+}
+
+.delicious .details div:nth-of-type(5) h2 button,
+.favorite .details div:nth-of-type(3) h2 button {
+  padding: 5px 5px 0 5px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.menu .details div h3 span {
+  color: orange;
+}
+
+.testimonials {
+  display: grid;
+  place-items: center;
+  padding: 50px;
+  background-color: rgba(151, 104, 91, 0.958);
+}
+
+.testimonial-details {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.testimonial-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+
+.reviews {
+  display: grid;
+  /* place-items: center; */
+  /* padding: 20px; */
+  /* border: solid; */
+  position: relative;
+}
+
+.reviews .review-start,
+.reviews .review-end {
+  display: flex;
+  /* border: solid; */
+  position: relative;
+
+}
+
+.reviews .review-end {
+  justify-content: end;
+}
+
+.reviews .review-start figure,
+.reviews .review-end figure {
+  height: 40vh;
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 5px solid white;
+  overflow: hidden;
+}
+
+.reviews .review-start figure .arrow-right {
+  position: absolute;
+  color: white;
+  font-size: 22px;
+  top: 7%;
+  left: 45%;
+  transform: translateX(15px);
+}
+
+.reviews .review-end figure .arrow-left {
+  position: absolute;
+  color: white;
+  font-size: 22px;
+  top: 4%;
+  left: 50%;
+  transform: rotate(180deg) translateX(-15px);
+}
+
+.reviews .review-start figure .img-container,
+.reviews .review-end figure .img-container {
+  height: 45%;
+}
+
+.reviews .review-start figure figcaption,
+.reviews .review-end figure figcaption {
+  background-color: rgba(173, 127, 74, 0.911);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  /* border: solid; */
+}
+
+.reviews .review-start figure figcaption div,
+.reviews .review-end figure figcaption div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviews .line {
+  width: 7px;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact {
+  display: grid;
+  place-items: center;
+  /* height: 100vh; */
+  padding: 80px;
+  background-image: linear-gradient(
+      to top,
+      rgb(225, 125, 12, 1),
+      rgba(225, 125, 12, 0.4)
+    ),
+    url(images/contact.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact-details {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-details .provide-details {
+  /* border: solid; */
+  width: 100%;
+  color: white;
+}
+
+.provide-details table {
+  width: 100%;
+}
+
+.provide-details table tr td {
+  padding: 10px 10px 10px 0;
+  color: white;
+}
+
+.provide-details table tr td input {
+  padding: 15px;
+  width: 100%;
+  border: 1px solid gray;
+  /* border: rgb(174, 5, 5); */
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.provide-details table tr td input:hover,
+.provide-details table tr td textarea:hover {
+  background-color: orange;
+  border: none;
+}
+
+.provide-details table tr td textarea {
+  border: 1px solid gray;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.provide-details .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.provide-details button {
+  background-color: orange;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  width: 25%;
+}
+
+.provide-details button:hover {
+  background-color: white;
+  color: orange;
+}
+
+.contact-details .map {
+  width: 1000px;
+  height: 330px;
+}
+
+.contact-details .map img {
+  border-radius: 20px;
+  filter: grayscale();
+}
+
+footer {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  /* gap: 200px; */
+  padding: 100px 0 80px 0;
+  color: white;
+  background: linear-gradient(to top, rgb(225, 125, 12, 1));
+}
+
+footer section {
+  display: flex;
+  gap: 200px;
+  /* align-items: center; */
+  justify-content: start;
+  /* border: solid; */
+}
+
+footer section div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* border: solid; */
+}
+
+footer section div .icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+}
+
+footer section div:nth-of-type(1) p:nth-of-type(2) {
+  color: rgb(229, 225, 225);
+}
+
+@media (max-width: 1300px) {
+  .menu-details {
+    width: 95%;
+    gap: 10px;
+  }
+
+  .reviews .review-start figure,
+  .reviews .review-end figure {
+    height: fit-content;
+  }
+
+  .reviews .review-start figure .img-container,
+  .reviews .review-end figure .img-container {
+    height: 20vh;
+  }
+
+  .contact {
+    padding: 80px 20px;
+  }
+
+  footer section {
+    gap: 100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .history {
+    padding: 100px 50px;
+  }
+
+  .history figure {
+    height: fit-content;
+  }
+
+  .history figure .img-container div {
+    font-size: 20px;
+  }
+
+  .history figure figcaption {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .history figure figcaption button {
+    padding: 10px;
+    width: 40%;
+  }
+
+  .people {
+    padding: 100px 20px;
+  }
+
+  .review-start figure .arrow-right,
+  .review-end figure .arrow-left {
+    display: none;
+  }
+
+  .contact-details {
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+    /* border: solid; */
+  }
+
+  .provide-details table tr td {
+    padding: 5px;
+  }
+
+  .contact-details .map {
+    width: fit-content;
+    height: 330px;
+  }
+
+  footer {
+    padding: 40px 0 80px 0;
+  }
+
+  footer section {
+    gap: 40px;
+  }
+}
+
 @media (max-width: 992px) {
-  .top-header header nav {
+  header {
+    position: relative;
+  }
+
+  header nav {
     position: absolute;
     top: 100%;
     left: -20%;
     transition: all 1s ease;
   }
 
-  .top-header header nav ul {
+  header nav ul {
     flex-direction: column;
     gap: 15px;
   }
@@ -169,21 +693,130 @@ body {
   #click:checked + label + nav {
     left: 1%;
   }
+
+  .history {
+    padding: 100px 20px;
+  }
+
+  .history figure {
+    gap: 40px;
+    /* border: solid; */
+  }
+
+  .history figure .img-container {
+    width: 100%;
+  }
+
+  .history figure figcaption p {
+    font-size: 16px;
+  }
+
+  .people-details figure {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .people-details figure div figcaption {
+    top: 70%;
+  }
+
+  .menu {
+    height: fit-content;
+    padding: 50px 0;
+  }
+  .menu-details {
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .reviews {
+    place-items: center;
+    gap: 20px;
+    /* border: solid; */
+  }
+
+  .reviews .review-start,
+  .reviews .review-end {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .reviews .review-start figure,
+  .reviews .review-end figure {
+    width: 70%;
+  }
+
+  .reviews .line {
+    display: none;
+  }
+
+  .contact-details {
+    width: 70%;
+  }
+
+  footer section {
+    flex-direction: column;
+    gap: 30px;
+    /* border: solid; */
+    width: 70%;
+  }
 }
 
 @media (max-width: 768px) {
-  .top-header header nav {
+  header nav {
     left: -40%;
+  }
+
+  .history {
+    padding: 70px 100px;
+  }
+
+  .history figure {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* border: solid; */
+  }
+
+  .history figure .img-container div {
+    top: 70%;
+  }
+
+  .people-details figure div figcaption {
+    top: 65%;
+  }
+
+  .menu-details {
+    width: 95%;
+  }
+
+  .reviews .review-start figure,
+  .reviews .review-end figure {
+    width: 100%;
+  }
+
+  .reviews .review-start figure figcaption {
+    padding: 15px;
+  }
+
+  .contact-details {
+    width: 80%;
+  }
+
+  footer section {
+    width: 80%;
   }
 }
 
 @media (max-width: 576px) {
-  .top-header header nav {
+  header nav {
+    top: 80%;
     left: -50%;
   }
 
-  .top-header header nav ul {
-    gap: 10px;
+  header nav ul {
+    gap: 5px;
   }
 
   .home .home-details p:first-child {
@@ -195,5 +828,98 @@ body {
 
   .home .home-details p:nth-child(3) {
     font-size: 1.5em;
+  }
+
+  .history {
+    padding: 70px 50px;
+  }
+
+  .history figure .img-container div {
+    font-size: 17px;
+  }
+
+  .history figure figcaption p {
+    font-size: 14px;
+  }
+
+  .history figure figcaption button {
+    padding: 5px;
+    width: 30%;
+    font-size: 10px;
+  }
+
+  .people {
+    padding: 100px 50px;
+  }
+
+  .people-details figure {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .menu-details {
+    width: 100%;
+  }
+
+  .delicious,
+  .favorite {
+    padding: 50px 10px;
+  }
+
+  .testimonials {
+    padding: 50px 15px;
+  }
+
+  .contact-details {
+    width: 95%;
+  }
+
+  .provide-details button {
+    padding: 10px;
+    font-size: 14px;
+    width: 35%;
+  }
+
+  footer section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 375px) {
+  .people {
+    padding: 75px 50px;
+  }
+
+  .people-details .people-title h1 {
+    font-size: 2rem;
+  }
+
+  .people-details figure div figcaption {
+    gap: 10px;
+    top: 55%;
+  }
+
+  .menu .details div:nth-of-type(1) h2,
+  .menu .details div:nth-of-type(3) h2,
+  .menu .details div:nth-of-type(5) h2,
+  .menu .details div:nth-of-type(7) h2,
+  .menu .details div:nth-of-type(9) h2 {
+    font-size: 16px;
+  }
+
+  .menu .details div:nth-of-type(1) h3,
+  .menu .details div:nth-of-type(3) h3,
+  .menu .details div:nth-of-type(5) h3,
+  .menu .details div:nth-of-type(7) h3,
+  .menu .details div:nth-of-type(9) h3 {
+    font-size: 16px;
+  }
+
+  .contact-details {
+    width: 100%;
+  }
+
+  footer section {
+    width: 95%;
   }
 }
