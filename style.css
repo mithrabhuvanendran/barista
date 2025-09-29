@@ -666,18 +666,18 @@ footer section div:nth-of-type(1) p:nth-of-type(2) {
 }
 
 @media (max-width: 992px) {
-  header {
+  main header {
     position: relative;
   }
 
-  header nav {
+  main header nav {
     position: absolute;
     top: 100%;
     left: -20%;
     transition: all 1s ease;
   }
 
-  header nav ul {
+  main header nav ul {
     flex-direction: column;
     gap: 15px;
   }
@@ -763,8 +763,9 @@ footer section div:nth-of-type(1) p:nth-of-type(2) {
 }
 
 @media (max-width: 768px) {
-  header nav {
+ main header nav {
     left: -40%;
+    padding: 10px;
   }
 
   .history {
@@ -810,13 +811,13 @@ footer section div:nth-of-type(1) p:nth-of-type(2) {
 }
 
 @media (max-width: 576px) {
-  header nav {
-    top: 80%;
+  main header nav {
+    top: 100%;
     left: -50%;
   }
 
-  header nav ul {
-    gap: 5px;
+  main header nav ul {
+    gap: 10px;
   }
 
   .home .home-details p:first-child {
@@ -886,6 +887,10 @@ footer section div:nth-of-type(1) p:nth-of-type(2) {
 }
 
 @media (max-width: 375px) {
+  main header nav ul {
+    gap: 5px;
+  }
+
   .people {
     padding: 75px 50px;
   }
